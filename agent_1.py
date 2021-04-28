@@ -110,7 +110,7 @@ def train_dqn(episode, env):
         state = env.reset()
         # print(state)
         score = 0
-        state = add_body(env,state)
+#         state = add_body(env,state)
         state = np.reshape(state, (1, env.state_space))
         max_steps = 10000
         for i in range(max_steps):
@@ -118,7 +118,7 @@ def train_dqn(episode, env):
             # print(action)
             prev_state = state
             next_state, reward, done, _ = env.step(action)
-            next_state = add_body(env,next_state)
+#             next_state = add_body(env,next_state)
             if score < env.total:
                 score = env.total
             next_state = np.reshape(next_state, (1, env.state_space))
@@ -165,23 +165,23 @@ if __name__ == '__main__':
     #     env = Snake(env_info=env_info)
     
     
-    # env = Snake()
-    # sum_of_rewards = train_dqn(ep, env)
+    env = Snake()
+    sum_of_rewards = train_dqn(ep, env)
 
-    sfile = open('results.csv', newline='')
-    spamreader = csv.reader(sfile)
+#     sfile = open('results.csv', newline='')
+#     spamreader = csv.reader(sfile)
 
-    l = []
+#     l = []
 
-    for row in spamreader:
-        l.append(row)
+#     for row in spamreader:
+#         l.append(row)
 
-    ll = []
+#     ll = []
 
-    for i in l[0]:
-        ll.append(int(i))
+#     for i in l[0]:
+#         ll.append(int(i))
 
-    sum_of_rewards = ll
+#     sum_of_rewards = ll
 
     # print(sum_of_rewards)
 
