@@ -35,8 +35,8 @@ class Snake(gym.Env):
         self.seed()
         self.reward = 0
         self.action_space = 4
-        # self.state_space = 12
-        self.state_space = 54
+        self.state_space = 12
+#         self.state_space = 54
         # self.state_space = 412
 
         self.total, self.maximum, self.deaths = 0, 0, 0
